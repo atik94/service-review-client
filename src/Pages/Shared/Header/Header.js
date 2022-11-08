@@ -7,6 +7,9 @@ const Header = () => {
       <li className="font-semibold">
         <Link to="/">Home</Link>
       </li>
+      <li className="font-semibold">
+        <Link to="/login">Login</Link>
+      </li>
     </>
   );
   return (
@@ -35,9 +38,9 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
-      <div className="navbar-end">
+      {/* <div className="navbar-end">
         <a className="btn">Get started</a>
-      </div>
+      </div> */}
     </div>
   );
 };
