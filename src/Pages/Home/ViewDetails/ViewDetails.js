@@ -14,6 +14,7 @@ const ViewDetails = () => {
     const message = form.message.value;
     const review = {
       service: _id,
+      serviceName: title,
       customer: name,
       email,
       message,
