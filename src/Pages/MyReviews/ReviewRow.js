@@ -1,12 +1,15 @@
 import React from "react";
 
-const ReviewRow = ({ review }) => {
-  const { serviceName, customer, message, image } = review;
+const ReviewRow = ({ review, handleDelete }) => {
+  const { _id, serviceName, customer, message, image } = review;
+
   return (
     <tr>
       <th>
         <label>
-          <button className="btn btn-info">X</button>
+          <button onClick={() => handleDelete(_id)} className="btn btn-info">
+            X
+          </button>
         </label>
       </th>
       <td>
