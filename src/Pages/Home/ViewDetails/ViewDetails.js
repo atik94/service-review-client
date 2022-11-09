@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import Reviews from "../../Reviews/Reviews";
 
 const ViewDetails = () => {
   const { _id, title, img, price, description, rating } = useLoaderData();
@@ -75,8 +76,9 @@ const ViewDetails = () => {
           <input className="btn btn-info" type="submit" value="submit" />
         </form>
       </div>
+
       <div>
-        <h2>review section</h2>
+        <Reviews></Reviews>
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
 
-const Services = () => {
+const ServicesAll = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/services")
@@ -16,17 +15,12 @@ const Services = () => {
         <h2 className="text-3xl font-semibold ">Our service area</h2>
       </div>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-        {services.slice(0, 3).map((service) => (
+        {services.map((service) => (
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
-      </div>
-      <div className="text-center mt-4 mb-5">
-        <Link to="/services">
-          <button className="btn btn-info">See All</button>
-        </Link>
       </div>
     </div>
   );
 };
 
-export default Services;
+export default ServicesAll;

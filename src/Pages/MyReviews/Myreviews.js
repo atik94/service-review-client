@@ -12,7 +12,6 @@ const Myreviews = () => {
   }, [user?.email]);
   return (
     <div>
-      <h2>this is my review {reviews.length}</h2>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead>
