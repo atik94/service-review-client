@@ -42,16 +42,13 @@ const ViewDetails = () => {
     <div>
       <div>
         <form onSubmit={handleReview}>
-          <div className="card card-side bg-base-100 shadow-xl">
+          <div className="card card-compact bg-base-100 shadow-xl">
             <figure>
-              <img src={img} style={{ minWidth: "800px" }} alt="Movie" />
+              <img className="w-screen" src={img} alt="" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{title}</h2>
               <p>{description}</p>
-              <h3>Rating: {rating}</h3>
-              <p className="text-2xl font-bold text-orange-600">Price: $ {price}</p>
-              <div className="card-actions justify-end"></div>
             </div>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-5">

@@ -15,7 +15,7 @@ const Services = () => {
         <h2 className="text-5xl font-bold text-orange-600">Services</h2>
         <h2 className="text-3xl font-semibold ">Our service area</h2>
       </div>
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         {services.slice(0, 3).map((service) => (
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
