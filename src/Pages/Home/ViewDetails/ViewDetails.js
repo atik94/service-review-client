@@ -48,6 +48,8 @@ const ViewDetails = () => {
             </figure>
             <div className="card-body">
               <h2 className="card-title">{title}</h2>
+              <h2 className="text-3xl text-orange-700">Price: {price}TK</h2>
+              <h3>Rating: {rating}</h3>
               <p>{description}</p>
             </div>
           </div>
