@@ -1,9 +1,17 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, loading } = useContext(AuthContext);
+  if (loading) {
+    <div class="flex justify-center items-center">
+      <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-purple-500" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>;
+  }
   const handleSignup = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -13,6 +21,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Your sign up is done", { positon: "top-right" });
       })
       .catch((err) => console.log(err));
   };

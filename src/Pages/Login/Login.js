@@ -1,11 +1,19 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
-
 const Login = () => {
   useTitle("Login");
-  const { login } = useContext(AuthContext);
+  const { login, loading } = useContext(AuthContext);
+  if (loading) {
+    <div class="flex justify-center items-center">
+      <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-purple-500" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>;
+  }
+
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -18,6 +26,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("You are successfully login", { position: "top-right" });
         navigate(from, { replace: true });
       })
       .catch((err) => console.log(err));

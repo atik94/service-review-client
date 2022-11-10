@@ -58,6 +58,10 @@ const Header = () => {
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           <img style={{ width: "50px" }} src={logo} alt="" />
         </Link>
+        <h2>
+          My<span className="text-3xl font-bold text-info">L</span>aundry
+          <span className="text-3xl font-bold text-info">H</span>ouse
+        </h2>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>

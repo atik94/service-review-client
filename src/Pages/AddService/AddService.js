@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
@@ -14,7 +15,6 @@ const AddService = () => {
     const description = event.target.description.value;
     const img = event.target.img.value;
     const service = { service_id, title, description, rating, img, price };
-    console.log(service);
     event.target.reset();
     fetch("http://localhost:5000/services", {
       method: "POST",
@@ -25,8 +25,7 @@ const AddService = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        alert("Data added successfully");
+        toast.success("Data added successfully", { position: "top-right" });
         const newService = [...services, data];
         setService(newService);
       })
