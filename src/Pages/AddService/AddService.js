@@ -33,7 +33,8 @@ const AddService = () => {
   };
 
   return (
-    <div>
+    <div className="w-1/4 mx-auto my-20">
+      <h2 className="text-3xl text-center">Add your here</h2>
       <form onSubmit={handleAddUser}>
         <div className="form-control">
           <label className="label">
@@ -102,7 +103,7 @@ const AddService = () => {
           />
         </div>
         <div className="form-control mt-6">
-          <input type="submit" value="Add User" className="btn btn-info input-sm w-full max-w-xs" />
+          <input type="submit" value="Add Service" className="btn btn-primary input-sm w-full max-w-xs" />
         </div>
       </form>
     </div>

@@ -21,7 +21,7 @@ const Header = () => {
             <Link to="/addservice">Add Service</Link>
           </li>
           <li className="font-semibold">
-            <button onClick={handleLogOut} className="btn btn-info">
+            <button onClick={handleLogOut} className="btn bg-orange-700">
               LogOut
             </button>
           </li>
@@ -59,16 +59,13 @@ const Header = () => {
           <img style={{ width: "50px" }} src={logo} alt="" />
         </Link>
         <h2>
-          My<span className="text-3xl font-bold text-info">L</span>aundry
-          <span className="text-3xl font-bold text-info">H</span>ouse
+          My<span className="text-3xl font-bold text-orange-600">L</span>aundry
+          <span className="text-3xl font-bold text-orange-600">H</span>ouse
         </h2>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
-      {/* <div className="navbar-end">
-        <a className="btn">Get started</a>
-      </div> */}
     </div>
   );
 };

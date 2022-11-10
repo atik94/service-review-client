@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 const Login = () => {
   useTitle("Login");
   const { login, loading } = useContext(AuthContext);
@@ -59,6 +60,7 @@ const Login = () => {
               Sign Up
             </Link>
           </p>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

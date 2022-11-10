@@ -10,19 +10,18 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div>
+    <div className="my-20">
       <div className="text-center mb-2">
-        <h2 className="text-5xl font-bold text-orange-600">Services</h2>
-        <h2 className="text-3xl font-semibold ">Our service area</h2>
+        <h2 className="text-5xl font-bold text-orange-600 my-20">All Our Services</h2>
       </div>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         {services.slice(0, 3).map((service) => (
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
       </div>
-      <div className="text-center mt-4 mb-5">
+      <div className="text-center mt-5 mb-5">
         <Link to="/services">
-          <button className="btn btn-info">See All</button>
+          <button className="btn btn-primary">See All</button>
         </Link>
       </div>
     </div>

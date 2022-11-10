@@ -9,12 +9,11 @@ const ServicesAll = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div>
+    <div className="mb-20">
       <div className="text-center mb-2">
-        <h2 className="text-5xl font-bold text-orange-600">Services</h2>
-        <h2 className="text-3xl font-semibold ">Our service area</h2>
+        <h2 className="text-5xl font-bold text-orange-600">Show All Services</h2>
       </div>
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-6">
         {services.map((service) => (
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}

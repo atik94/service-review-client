@@ -7,7 +7,7 @@ const ReviewRow = ({ review, handleDelete }) => {
     <tr>
       <th>
         <label>
-          <button onClick={() => handleDelete(_id)} className="btn btn-info">
+          <button onClick={() => handleDelete(_id)} className="btn bg-orange-600">
             X
           </button>
         </label>
@@ -19,22 +19,11 @@ const ReviewRow = ({ review, handleDelete }) => {
               <img src={image} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
-          <div>
-            <div className="font-bold">Hart Hagerty</div>
-            <div className="text-sm opacity-50">United States</div>
-          </div>
         </div>
       </td>
-      <td>
-        {customer}
-        <br />
-        <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-      </td>
+      <td>{customer}</td>
       <td>{serviceName}</td>
       <td>{message}</td>
-      <th>
-        <button className="btn btn-ghost btn-xs">details</button>
-      </th>
     </tr>
   );
 };

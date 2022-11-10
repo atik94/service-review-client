@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 import ReviewRow from "./ReviewRow";
@@ -22,7 +23,7 @@ const Myreviews = () => {
         .then((data) => {
           console.log(data);
           if (data.deltedCount > 0) {
-            alert("data deleted successfully");
+            toast.success("Review deleted");
             const remaining = reviews.filter((rvr) => rvr._id !== id);
             setReviews(remaining);
           }
@@ -40,10 +41,10 @@ const Myreviews = () => {
                   <input type="checkbox" className="checkbox" />
                 </label>
               </th>
+              <th>Image</th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th>Review</th>
+              <th>Service Title</th>
+              <th>Reviews</th>
             </tr>
           </thead>
           <tbody>

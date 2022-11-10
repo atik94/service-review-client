@@ -72,11 +72,12 @@ const ViewDetails = () => {
             className="textarea textarea-bordered h-24 w-full"
             placeholder="Write your review here:"
           ></textarea>
-          <input className="btn btn-info" type="submit" value="submit" />
+          <input className="btn btn-primary" type="submit" value="submit" />
         </form>
       </div>
 
-      <div>
+      <div className="mt-20">
+        <h1 className="text-3xl font-bold text-center my-6">Show All Reviews Here</h1>
         <Reviews></Reviews>
       </div>
     </div>
