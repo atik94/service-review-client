@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
   const menuItems = (
     <>
       <li className="font-semibold">
@@ -17,12 +20,20 @@ const Header = () => {
           <li className="font-semibold">
             <Link to="/addservice">Add Service</Link>
           </li>
+          <li className="font-semibold">
+            <button onClick={handleLogOut} className="btn btn-info">
+              LogOut
+            </button>
+          </li>
         </>
       ) : (
         <li className="font-semibold">
           <Link to="/login">Login</Link>
         </li>
       )}
+      <li className="font-semibold">
+        <Link to="/blogs">Blogs</Link>
+      </li>
     </>
   );
   return (
